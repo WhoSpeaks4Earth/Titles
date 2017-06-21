@@ -1,0 +1,2 @@
+# Titles Project Description
+This app allows users to search for a title by name, displaying titles matching the search criteria, as well as showing details of a selected title. This project is built using Visual Studio Code, .Net Core, Bootstrap, Angular/Typescript, WebAPI, Entity Framework, and SQL Server.
