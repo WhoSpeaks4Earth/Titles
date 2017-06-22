@@ -23,18 +23,20 @@ namespace Titles.Controllers
         [Route("Title")]
         public IEnumerable<Title> Get()
         {
+            var titles = _context.Title;
+            System.Console.WriteLine("CHECKING");
+            System.Console.WriteLine(titles);
+
             return _context.Title;
         }
 
+        // GET: api/Title/{id}
         [HttpGet("{id}")]
         [Route("Title/{id}")]
         public IActionResult Get(int id)
         {
-            System.Console.WriteLine("GOT HERE!!!!!!!!!!!!!!");
             var item = _context.Title.FirstOrDefault(t => t.TitleId == id);
-
             
-            System.Console.WriteLine(item);
             if (item == null)
             {
                 return NotFound();
