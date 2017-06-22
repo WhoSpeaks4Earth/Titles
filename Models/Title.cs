@@ -13,7 +13,7 @@ namespace Titles.Models
 
         public string TitleNameSortable { get; set; }
 
-        public int TitleTypeId { get; set; }
+        //public int TitleTypeId { get; set; } = 0;
 
         public int ReleaseYear { get; set; }
 

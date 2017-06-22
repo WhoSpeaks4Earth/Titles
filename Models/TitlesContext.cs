@@ -8,5 +8,7 @@ namespace Titles.Models
             : base(options) { }
 
         public titlesContext() { }
+
+        public DbSet<Title> Title { get; set; }
     }
 }

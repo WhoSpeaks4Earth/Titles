@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Titles.Models;
 
-namespace WebApplicationBasic
+namespace Titles
 {
     public class Startup
     {
