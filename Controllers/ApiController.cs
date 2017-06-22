@@ -18,9 +18,9 @@ namespace Titles.Controllers
             _context = context;
         }
 
-        // GET: api/values
+        // GET: api/Title
         [HttpGet]
-        [Route("Titles")]
+        [Route("Title")]
         public IEnumerable<Title> Get()
         {
             return _context.Title;
