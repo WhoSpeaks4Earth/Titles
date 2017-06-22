@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Titles.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Titles.Controllers
 {
@@ -23,11 +24,11 @@ namespace Titles.Controllers
         [Route("Title")]
         public IEnumerable<Title> Get()
         {
-            var titles = _context.Title;
-            System.Console.WriteLine("CHECKING");
-            System.Console.WriteLine(titles);
+            var titles = _context.Title
+                //.Include(t => t.StoryLine)
+                .ToList();
 
-            return _context.Title;
+            return titles;
         }
 
         // GET: api/Title/{id}
@@ -35,13 +36,15 @@ namespace Titles.Controllers
         [Route("Title/{id}")]
         public IActionResult Get(int id)
         {
-            var item = _context.Title.FirstOrDefault(t => t.TitleId == id);
+            var title = _context.Title
+                .Where(t => t.TitleId == id)
+                .Include(t => t.StoryLine);
             
-            if (item == null)
+            if (title == null)
             {
                 return NotFound();
             }
-            return new ObjectResult(item);
+            return new ObjectResult(title);
         }
     }
 }
