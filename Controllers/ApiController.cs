@@ -32,19 +32,33 @@ namespace Titles.Controllers
         // GET: api/Title/{id}
         [HttpGet("{id}")]
         [Route("Title/{id}")]
-        public IActionResult GetDetails(int id)
+        public IActionResult Get(int id)
         {
-
             var details = _context.Title
-                .Where(t => t.TitleId == id)
-                .Include(t => t.StoryLine)
-                .ToList();
+                .SingleOrDefault(t => t.TitleId == id);
             
             if (details == null)
             {
                 return NotFound();
             }
             return new ObjectResult(details);
+        }
+
+        // GET: api/Title/{id}
+        [HttpGet("{id}")]
+        [Route("Title/StoryLines/{id}")]
+        public IActionResult GetStoryLines(int id)
+        {
+
+            var storylines = _context.StoryLine
+                .Where(s => s.TitleId == id)
+                .ToList();
+            
+            if (storylines == null)
+            {
+                return NotFound();
+            }
+            return new ObjectResult(storylines);
         }
     }
 }
