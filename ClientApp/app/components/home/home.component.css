@@ -1,0 +1,15 @@
+.jumbotron {
+    background-color: white;
+}
+
+p {
+    margin: 20px 0px 35px 0px;
+    font-weight: lighter;
+    color: lightgray;
+}
+
+.btn {
+    border-radius: 0px;
+    padding: 20px;
+    text-transform: uppercase;
+}

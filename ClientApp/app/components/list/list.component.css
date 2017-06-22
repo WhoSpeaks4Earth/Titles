@@ -1,0 +1,25 @@
+
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-wrap: wrap;
+}
+
+.well:hover {
+    cursor: pointer;
+    background-color: lightblue;
+}
+
+input {
+    margin:25px 0px;
+}
+.btn {
+    border-radius: 0px;
+}
+
+p.back-container {
+    text-align: right;
+    padding-top: 20px;
+}
