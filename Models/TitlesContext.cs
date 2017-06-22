@@ -11,7 +11,7 @@ namespace Titles.Models
 
         public DbSet<Title> Title { get; set; }
 
-        //public DbSet<StoryLine> StoryLine { get; set; }
+        public DbSet<StoryLine> StoryLine { get; set; }
 
         //public DbSet<Genre> Genre { get; set; }
 

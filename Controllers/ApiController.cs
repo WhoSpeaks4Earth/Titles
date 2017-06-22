@@ -24,9 +24,7 @@ namespace Titles.Controllers
         [Route("Title")]
         public IEnumerable<Title> Get()
         {
-            var titles = _context.Title
-                //.Include(t => t.StoryLine)
-                .ToList();
+            var titles = _context.Title.ToList();
 
             return titles;
         }
@@ -34,17 +32,19 @@ namespace Titles.Controllers
         // GET: api/Title/{id}
         [HttpGet("{id}")]
         [Route("Title/{id}")]
-        public IActionResult Get(int id)
+        public IActionResult GetDetails(int id)
         {
-            var title = _context.Title
+
+            var details = _context.Title
                 .Where(t => t.TitleId == id)
-                .Include(t => t.StoryLine);
+                .Include(t => t.StoryLine)
+                .ToList();
             
-            if (title == null)
+            if (details == null)
             {
                 return NotFound();
             }
-            return new ObjectResult(title);
+            return new ObjectResult(details);
         }
     }
 }
