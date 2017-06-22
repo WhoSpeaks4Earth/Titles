@@ -14,7 +14,7 @@
 
 <div class="row row-eq-height">
     <div class="col-sm-6 col-md-3" *ngFor="let title of titles | filter:term">
-        <div class="well well-sm" (click)="titleClick(title.titleId)" data-toggle="modal" data-target="#myModal">
+        <div class="well well-sm" (click)="titleClick(title.titleId)" data-toggle="modal" data-target="#titleDetails">
             <h3>{{ title.titleName }}</h3>
             <p>Released: {{ title.releaseYear }}</p>
         </div>
@@ -23,7 +23,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="titleDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

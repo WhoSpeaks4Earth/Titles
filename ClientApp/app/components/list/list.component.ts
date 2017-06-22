@@ -35,7 +35,6 @@ export class ListComponent implements OnInit {
 
         this.http.get('/api/Title/StoryLines/' + titleId).subscribe(result => {
             this.storylines = result.json();
-            console.log(this.storylines);
         });
     }
 }

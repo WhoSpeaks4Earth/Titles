@@ -12,6 +12,7 @@ namespace Titles.Models
         public string Type { get; set; }
         public string Language { get; set; }
         public string Description { get; set; }
+        
         public int TitleId { get; set; }
         public Title Title { get; set; }
     }
