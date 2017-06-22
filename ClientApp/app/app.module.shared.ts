@@ -4,13 +4,15 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './components/app/app.component'
 import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 export const sharedConfig: NgModule = {
     bootstrap: [ AppComponent ],
     declarations: [
         AppComponent,
         HomeComponent,
-        ListComponent
+        ListComponent,
+        FilterPipe
     ],
     imports: [
         RouterModule.forRoot([
