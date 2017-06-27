@@ -4,11 +4,12 @@ This app allows users to search for a title by name, displaying titles matching 
 # Get Started
 1. Prerequesites: Git, Node/NPM, .NET Core SDK, webpack
 2. Clone this repo
-3. npm install
-4. dotnet restore
-5. webpack --config webpack.config.vendor.js
+3. Run: npm install
+4. Run: dotnet restore
+5. Run: webpack --config webpack.config.vendor.js
+6. Run: webpack
 4. Change connection string in appsettings.json appropriately to connect to your db
-5. dotnet run
+5. Run: dotnet run
 
 ## More Info
 - Check out my other repos in this GitHub account, as well as my personal site: [My Site](http://shawnbahramy.com)
