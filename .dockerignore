@@ -1,0 +1,11 @@
+.git
+.cache
+*.md
+
+.vs/
+/wwwroot/dist/
+/ClientApp/dist/
+*.mdf
+*.ldf
+
+/node_modules
