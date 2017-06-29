@@ -13,7 +13,7 @@
 <input type="text" [(ngModel)]="term" class="form-control" placeholder="Search a title...">
 
 <div class="row row-eq-height">
-    <div class="col-sm-6 col-md-3" *ngFor="let title of titles | filter:term">
+    <div class="col-sm-6 col-md-3" *ngFor="let title of titlesService.titles | filter:term">
         <div class="well well-sm" (click)="titleClick(title.titleId)" data-toggle="modal" data-target="#titleDetails">
             <h3>{{ title.titleName }}</h3>
             <p>Released: {{ title.releaseYear }}</p>
@@ -28,11 +28,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel" *ngIf="title"> {{ title.titleName }} <small>{{ title.releaseYear }}</small></h4>
+        <h4 class="modal-title" id="myModalLabel" *ngIf="titlesService.title"> {{ title.titleName }} <small>{{ title.releaseYear }}</small></h4>
       </div>
       <div class="modal-body">
         <ul *ngIf="storylines">
-            <li *ngFor="let s of storylines">
+            <li *ngFor="let s of titlesService.storylines">
                 <b>{{ s.type }} Description</b> - {{ s.description }}
             </li>
         </ul>
