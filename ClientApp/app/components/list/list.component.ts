@@ -5,9 +5,11 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 @Component({
     selector: 'list',
     templateUrl: './list.component.html',
-    styleUrls: ['./list.component.css']
+    styleUrls: ['./list.component.css'],
+    providers: [TitlesService]
 })
 export class ListComponent implements OnInit {
+    private term: string = '';
 
     constructor(private titlesService: TitlesService) {
     }

@@ -8,7 +8,6 @@ export class TitlesService {
     public titles: Title[] = [];
     public title: Title;
     public storylines: StoryLine[] = [];
-    public term: string = '';
 
     constructor(private http: Http) {
     }
