@@ -1,11 +1,13 @@
 import { Component, Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { Title } from '../models/title.model';
+import { StoryLine } from '../models/storyline.model';
 
 @Injectable()
 export class TitlesService {
     public titles: Title[] = [];
     public title: Title;
-    public storylines: Object[] = [];
+    public storylines: StoryLine[] = [];
     public term: string = '';
 
     constructor(private http: Http) {
@@ -27,12 +29,4 @@ export class TitlesService {
         });
     }
 
-}
-
-export interface Title {
-    TitleId: number;
-    TitleName: string;
-    TitleNameSortable: string;
-    ReleaseYear: number;
-    ProcessedDateTimeUTC: Date;
 }
