@@ -23,7 +23,7 @@ export class TitlesService {
             this.title = result.json();
         });
 
-        this.http.get('/api/v1/Titles/StoryLines/' + titleId).subscribe(result => {
+        this.http.get('/api/v1/Titles/' + titleId + '/StoryLines/').subscribe(result => {
             this.storylines = result.json();
         });
     }

@@ -46,7 +46,7 @@ namespace Titles.Controllers
 
         // GET: api/Titles/{id}
         [HttpGet("{id}")]
-        [Route("Titles/StoryLines/{id}")]
+        [Route("Titles/{id}/StoryLines")]
         public IActionResult GetStoryLines(int id)
         {
 
