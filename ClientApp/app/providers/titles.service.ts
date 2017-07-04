@@ -1,13 +1,14 @@
 import { Component, Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
 import { Title } from '../models/title.model';
-import { StoryLine } from '../models/storyline.model';
+//import { StoryLine } from '../models/storyline.model';
 
 @Injectable()
 export class TitlesService {
     public titles: Title[] = [];
     public title: Title;
-    public storylines: StoryLine[] = [];
+    //public storylines: StoryLine[] = [];
 
     constructor(private http: Http) {
     }
@@ -21,10 +22,6 @@ export class TitlesService {
     getTitle(titleId: number) {
         this.http.get('/api/v1/Titles/' + titleId).subscribe(result => {
             this.title = result.json();
-        });
-
-        this.http.get('/api/v1/Titles/' + titleId + '/StoryLines/').subscribe(result => {
-            this.storylines = result.json();
         });
     }
 

@@ -32,15 +32,18 @@ namespace Titles.Controllers
         // GET: api/Titles/{id}
         [HttpGet("{id}")]
         [Route("Titles/{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            var details = _context.Title
-                .SingleOrDefault(t => t.TitleId == id);
+            var details = await _context.Title
+                .Where(t => t.TitleId == id)
+                .Include(t => t.StoryLine)
+                .SingleOrDefaultAsync();
             
             if (details == null)
             {
                 return NotFound();
             }
+            
             return new ObjectResult(details);
         }
 

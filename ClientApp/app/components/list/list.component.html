@@ -31,8 +31,8 @@
         <h4 class="modal-title" id="myModalLabel" *ngIf="titlesService.title"> {{ titlesService.title.titleName }} <small>{{ titlesService.title.releaseYear }}</small></h4>
       </div>
       <div class="modal-body">
-        <ul *ngIf="titlesService.storylines">
-            <li *ngFor="let s of titlesService.storylines">
+        <ul *ngIf="titlesService.title">
+            <li *ngFor="let s of titlesService.title.storyLine">
                 <b>{{ s.type }} Description</b> - {{ s.description }}
             </li>
         </ul>

@@ -14,7 +14,7 @@ namespace Titles.Models
         public int ReleaseYear { get; set; }
         public DateTime ProcessedDateTimeUTC { get; set; }
 
-        public StoryLine StoryLine { get; set; }
+        public virtual ICollection<StoryLine> StoryLine { get; set; }
 
         //public ICollection<TitleGenre> TitleGenres { get; set; }
     }

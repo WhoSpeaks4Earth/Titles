@@ -17,10 +17,12 @@ namespace Titles.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
 
-            modelBuilder.Entity<Title>()
-                .HasOne(t => t.StoryLine)
-                .WithOne(s => s.Title)
-                .HasForeignKey<StoryLine>(s => s.TitleId);
+            modelBuilder.Entity<StoryLine>(entity =>
+            {
+                entity.HasOne(d => d.Title)
+                        .WithMany(t => t.StoryLine)
+                        .HasForeignKey(d => d.TitleId);
+            });
 
 
         //     modelBuilder.Entity<TitleGenre>()
