@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Titles.Controllers
 {
     [Produces("application/json")]
-    [Route("api")]
+    [Route("api/v1")]
     public class ApiController : Controller
     {
         private readonly titlesContext _context;
@@ -19,9 +19,9 @@ namespace Titles.Controllers
             _context = context;
         }
 
-        // GET: api/Title
+        // GET: api/Titles
         [HttpGet]
-        [Route("Title")]
+        [Route("Titles")]
         public IEnumerable<Title> Get()
         {
             var titles = _context.Title.ToList();
@@ -29,9 +29,9 @@ namespace Titles.Controllers
             return titles;
         }
 
-        // GET: api/Title/{id}
+        // GET: api/Titles/{id}
         [HttpGet("{id}")]
-        [Route("Title/{id}")]
+        [Route("Titles/{id}")]
         public IActionResult Get(int id)
         {
             var details = _context.Title
@@ -44,9 +44,9 @@ namespace Titles.Controllers
             return new ObjectResult(details);
         }
 
-        // GET: api/Title/{id}
+        // GET: api/Titles/{id}
         [HttpGet("{id}")]
-        [Route("Title/StoryLines/{id}")]
+        [Route("Titles/StoryLines/{id}")]
         public IActionResult GetStoryLines(int id)
         {
 

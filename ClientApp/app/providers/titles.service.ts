@@ -13,17 +13,17 @@ export class TitlesService {
     }
 
     getTitles() {
-        this.http.get('/api/Title').subscribe(result => {
+        this.http.get('/api/v1/Titles').subscribe(result => {
             this.titles = result.json();
         });
     }
 
     getTitle(titleId: number) {
-        this.http.get('/api/Title/' + titleId).subscribe(result => {
+        this.http.get('/api/v1/Titles/' + titleId).subscribe(result => {
             this.title = result.json();
         });
 
-        this.http.get('/api/Title/StoryLines/' + titleId).subscribe(result => {
+        this.http.get('/api/v1/Titles/StoryLines/' + titleId).subscribe(result => {
             this.storylines = result.json();
         });
     }
