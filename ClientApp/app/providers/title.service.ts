@@ -3,10 +3,9 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { ITitle } from '../models/title.model';
 import 'rxjs/add/operator/map';
-//import 'rxjs/add/operator/finally';
 
 @Injectable()
-export class TitlesService {
+export class TitleService {
 
     constructor(private http: Http) {
     }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
-import { TitlesService } from '../../providers/titles.service';
+import { TitleService } from '../../providers/title.service';
 import { FilterPipe } from '../../pipes/filter.pipe';
 import { ITitle } from '../../models/title.model';
 
@@ -9,7 +9,7 @@ import { ITitle } from '../../models/title.model';
     selector: 'list',
     templateUrl: './list.component.html',
     styleUrls: ['./list.component.css'],
-    providers: [TitlesService]
+    providers: [TitleService]
 })
 export class ListComponent implements OnInit {
     private term: string = '';
@@ -17,7 +17,7 @@ export class ListComponent implements OnInit {
     private selectedTitle: ITitle;
 
     constructor(
-        private titlesService: TitlesService,
+        private titleService: TitleService,
         private router: Router) { }
 
     ngOnInit(): void {
@@ -25,7 +25,7 @@ export class ListComponent implements OnInit {
     }
 
     getTitles() {
-        this.titlesService.getTitles()
+        this.titleService.getTitles()
             .subscribe(
                 titles => this.titles = titles,
                 error => console.log(error)
