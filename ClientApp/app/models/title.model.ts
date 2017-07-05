@@ -1,10 +1,10 @@
-import { StoryLine } from './storyline.model';
+import { IStoryLine } from './storyline.model';
 
-export interface Title {
+export interface ITitle {
     TitleId: number;
     TitleName: string;
     TitleNameSortable: string;
     ReleaseYear: number;
     ProcessedDateTimeUTC: Date;
-    storylines: StoryLine[];
+    storylines: IStoryLine[];
 }

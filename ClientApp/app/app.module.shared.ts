@@ -6,6 +6,7 @@ import { AppComponent } from './components/app/app.component'
 import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
 import { TitleDetailsComponent } from './components/title-details/title-details.component';
+import { TitleStorylinesComponent } from './components/title-storylines/title-storylines.component';
 import { FilterPipe } from './pipes/filter.pipe';
 
 export const sharedConfig: NgModule = {
@@ -15,6 +16,7 @@ export const sharedConfig: NgModule = {
         HomeComponent,
         ListComponent,
         TitleDetailsComponent,
+        TitleStorylinesComponent,
         FilterPipe
     ],
     imports: [

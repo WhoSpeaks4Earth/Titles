@@ -12,7 +12,5 @@
         {{ g.genre.name }}
     </span>
 
-    <ul *ngFor="let s of title.storyLine">
-        <li>{{ s.type }} - {{ s.description }}</li>
-    </ul>
+    <title-storylines [title]="title"></title-storylines>
 </div>

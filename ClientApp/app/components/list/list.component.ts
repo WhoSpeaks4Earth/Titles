@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { TitlesService } from '../../providers/titles.service';
 import { FilterPipe } from '../../pipes/filter.pipe';
-import { Title } from '../../models/title.model';
+import { ITitle } from '../../models/title.model';
 
 @Component({
     selector: 'list',
@@ -13,8 +13,8 @@ import { Title } from '../../models/title.model';
 })
 export class ListComponent implements OnInit {
     private term: string = '';
-    private titles: Title[];
-    private selectedTitle: Title;
+    private titles: ITitle[];
+    private selectedTitle: ITitle;
 
     constructor(
         private titlesService: TitlesService,
@@ -35,5 +35,4 @@ export class ListComponent implements OnInit {
     gotoDetail(): void {
         this.router.navigate(['/detail', this.selectedTitle.TitleId]);
     }
-
 }

@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Location } from '@angular/common';
-import { Title } from '../../models/title.model';
+import { ITitle } from '../../models/title.model';
 import 'rxjs/add/operator/switchMap';
-
+import 'rxjs/add/operator/finally';
 import { TitlesService } from '../../providers/titles.service';
 
 @Component({
@@ -13,11 +12,10 @@ import { TitlesService } from '../../providers/titles.service';
     providers: [TitlesService]
 })
 export class TitleDetailsComponent implements OnInit {
-    @Input() title: Title;
+    title: ITitle;
 
     constructor(private titlesService: TitlesService,
-                private route: ActivatedRoute,
-                private location: Location) {}
+                private route: ActivatedRoute) {}
 
     ngOnInit(): void {
         this.getTitleDetails();
@@ -26,6 +24,9 @@ export class TitleDetailsComponent implements OnInit {
     getTitleDetails() {
         this.route.paramMap
             .switchMap((params: ParamMap) => this.titlesService.getTitle(+params.get('id')))
-            .subscribe(title => this.title = title);
+            .subscribe({
+                next: title => this.title = title,
+                error: err => console.log(err)
+            });
     }
 }

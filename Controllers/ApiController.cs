@@ -41,6 +41,9 @@ namespace Titles.Controllers
                     .ThenInclude(g => g.Genre)
                 .SingleOrDefaultAsync();
             
+            // mimic a server delay
+            //await Task.Delay(1000);
+
             if (details == null)
             {
                 return NotFound();

@@ -1,4 +1,4 @@
-export interface StoryLine {
+export interface IStoryLine {
     TitleId: number;
     Type: string;
     Language: string;
