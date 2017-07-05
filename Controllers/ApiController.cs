@@ -37,6 +37,8 @@ namespace Titles.Controllers
             var details = await _context.Title
                 .Where(t => t.TitleId == id)
                 .Include(t => t.StoryLine)
+                .Include(t => t.TitleGenres)
+                    .ThenInclude(g => g.Genre)
                 .SingleOrDefaultAsync();
             
             if (details == null)
@@ -45,23 +47,6 @@ namespace Titles.Controllers
             }
             
             return new ObjectResult(details);
-        }
-
-        // GET: api/Titles/{id}
-        [HttpGet("{id}")]
-        [Route("Titles/{id}/StoryLines")]
-        public IActionResult GetStoryLines(int id)
-        {
-
-            var storylines = _context.StoryLine
-                .Where(s => s.TitleId == id)
-                .ToList();
-            
-            if (storylines == null)
-            {
-                return NotFound();
-            }
-            return new ObjectResult(storylines);
         }
     }
 }

@@ -26,9 +26,10 @@
 <div class="modal fade" id="titleDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" *ngIf="titlesService.title">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel" *ngIf="titlesService.title"> {{ titlesService.title.titleName }} <small>{{ titlesService.title.releaseYear }}</small></h4>
+        <h4 class="modal-title" id="myModalLabel"> {{ titlesService.title.titleName }} <small>{{ titlesService.title.releaseYear }}</small></h4>
+        <ul><li *ngFor="let g of titlesService.title.titleGenres">{{ g.genre.name }}</li></ul>
       </div>
       <div class="modal-body">
         <ul *ngIf="titlesService.title">
