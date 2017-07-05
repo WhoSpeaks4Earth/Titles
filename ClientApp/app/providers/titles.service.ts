@@ -1,28 +1,24 @@
 import { Component, Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Title } from '../models/title.model';
-//import { StoryLine } from '../models/storyline.model';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class TitlesService {
     public titles: Title[] = [];
     public title: Title;
-    //public storylines: StoryLine[] = [];
 
     constructor(private http: Http) {
     }
 
-    getTitles() {
-        this.http.get('/api/v1/Titles').subscribe(result => {
-            this.titles = result.json();
-        });
+    getTitles(): Observable<Title[]> {
+        return this.http.get('/api/v1/Titles')
+            .map((res: Response) => <Title[]> res.json());
     }
 
-    getTitle(titleId: number) {
-        this.http.get('/api/v1/Titles/' + titleId).subscribe(result => {
-            this.title = result.json();
-        });
+    getTitle(id: number): Observable<Title> {
+        return this.http.get('/api/v1/Titles/' + id)
+            .map((res: Response) => <Title> res.json());
     }
-
 }

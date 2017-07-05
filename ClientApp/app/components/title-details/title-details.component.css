@@ -1,0 +1,10 @@
+.btn {
+    border-radius: 0px;
+}
+p.btn-container {
+    text-align: right;
+    padding-top: 20px;
+}
+span.label {
+    margin: 5px;
+}

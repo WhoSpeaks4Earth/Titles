@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Rx';
 import { TitlesService } from '../../providers/titles.service';
 import { FilterPipe } from '../../pipes/filter.pipe';
+import { Title } from '../../models/title.model';
 
 @Component({
     selector: 'list',
@@ -10,15 +13,27 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 })
 export class ListComponent implements OnInit {
     private term: string = '';
+    private titles: Title[];
+    private selectedTitle: Title;
 
-    constructor(private titlesService: TitlesService) {
-    }
+    constructor(
+        private titlesService: TitlesService,
+        private router: Router) { }
 
     ngOnInit(): void {
-        this.titlesService.getTitles();
+        this.getTitles();
     }
 
-    titleClick(titleId: number) {
-        this.titlesService.getTitle(titleId);
+    getTitles() {
+        this.titlesService.getTitles()
+            .subscribe(
+                titles => this.titles = titles,
+                error => console.log(error)
+            )
     }
+
+    gotoDetail(): void {
+        this.router.navigate(['/detail', this.selectedTitle.TitleId]);
+    }
+
 }

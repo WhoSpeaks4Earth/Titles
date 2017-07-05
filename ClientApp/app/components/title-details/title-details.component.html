@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-xs-6" *ngIf="title">
+        <h1>{{ title.titleName }} <small>{{ title.releaseYear }}</small></h1>
+    </div>
+    <div class="col-xs-6">
+        <p class="btn-container"><a class="btn btn-primary btn-sm" href="#" role="button" [routerLink]="['/list']">Go Back</a></p>
+    </div>
+</div>
+
+<div *ngIf="title">
+    <span class="label label-default" *ngFor="let g of title.titleGenres">
+        {{ g.genre.name }}
+    </span>
+
+    <ul *ngFor="let s of title.storyLine">
+        <li>{{ s.type }} - {{ s.description }}</li>
+    </ul>
+</div>

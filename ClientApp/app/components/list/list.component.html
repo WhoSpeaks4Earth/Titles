@@ -1,48 +1,23 @@
 
 <div class="row">
     <div class="col-xs-6">
-        <h1>Titles List</h1>
+        <h1>Titles</h1>
     </div>
     <div class="col-xs-6">
-        <p class="back-container"><a class="btn btn-primary btn-sm" href="#" role="button" [routerLink]="['/home']">Go Home</a></p>
+        <p class="btn-container"><a class="btn btn-primary btn-sm" href="#" role="button" [routerLink]="['/home']">Go Home</a></p>
     </div>
 </div>
 
 
-
 <input type="text" [(ngModel)]="term" class="form-control" placeholder="Search a title...">
 
-<div class="row row-eq-height">
-    <div class="col-sm-6 col-md-3" *ngFor="let title of titlesService.titles | filter:term">
-        <div class="well well-sm" (click)="titleClick(title.titleId)" data-toggle="modal" data-target="#titleDetails">
+<div class="row row-eq-height" *ngIf="titles">
+    <div class="col-sm-6 col-md-3"
+        *ngFor="let title of titles | filter:term"
+        [routerLink]="['/title-details', title.titleId]">
+        <div class="well well-sm">
             <h3>{{ title.titleName }}</h3>
             <p>Released: {{ title.releaseYear }}</p>
         </div>
     </div>
 </div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="titleDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" *ngIf="titlesService.title">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"> {{ titlesService.title.titleName }} <small>{{ titlesService.title.releaseYear }}</small></h4>
-        <ul><li *ngFor="let g of titlesService.title.titleGenres">{{ g.genre.name }}</li></ul>
-      </div>
-      <div class="modal-body">
-        <ul *ngIf="titlesService.title">
-            <li *ngFor="let s of titlesService.title.storyLine">
-                <b>{{ s.type }} Description</b> - {{ s.description }}
-            </li>
-        </ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Ok, Cool</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
