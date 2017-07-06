@@ -1,7 +1,4 @@
 
-
 <div *ngIf="title">
-    <ul *ngFor="let s of title.storyLine">
-        <li>{{ s.type }} - {{ s.description }}</li>
-    </ul>
+    <p>{{ title.storyLine[0].description }}</p>
 </div>
