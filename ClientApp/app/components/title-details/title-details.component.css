@@ -1,11 +1,20 @@
 .btn {
+    background-color: #06AED5;
     border-radius: 0px;
+    border: 2px solid #06AED5;
     text-transform: uppercase;
+}
+h1 {
+    margin-bottom: 20px;
 }
 p.btn-container {
     text-align: right;
     padding-top: 20px;
 }
 span.label {
-    margin: 5px;
+    margin: 5px 10px 15px 0px;
+    padding: 5px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    background-color: #73D2DE;
 }

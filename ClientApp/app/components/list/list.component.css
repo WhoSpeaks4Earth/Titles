@@ -2,18 +2,32 @@
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display:         flex;
+    display: flex;
     flex-wrap: wrap;
+}
+h4 {
+    font-weight: normal;
+    color: #3A3E3B;
+    text-transform: uppercase;
+}
+.well {
+    background-color: #FFF;
+    border-radius: 0px;
+    box-shadow: 3px 3px 4px #73D2DE;
+}
+p {
+    color: #D81159;
 }
 .well:hover {
     cursor: pointer;
-    background-color: lightblue;
 }
 input {
     margin:25px 0px;
 }
 .btn {
+    background-color: #06AED5;
     border-radius: 0px;
+    border: 2px solid #06AED5;
     text-transform: uppercase;
 }
 p.btn-container {

@@ -1,12 +1,17 @@
 .jumbotron {
     background-color: white;
 }
-p {
-    margin: 20px 0px 35px 0px;
+h1 {
     font-weight: lighter;
-    color: lightgray;
+}
+p {
+    margin: 20px 0px 65px 0px;
+    font-size: 1.8em;
+    color: #D81159;
 }
 .btn {
+    background-color: #06AED5;
+    border: 0px solid white;
     border-radius: 0px;
     padding: 20px;
     text-transform: uppercase;
