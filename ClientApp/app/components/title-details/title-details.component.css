@@ -7,14 +7,9 @@
 h1 {
     margin-bottom: 20px;
 }
-p.btn-container {
+p {
     text-align: right;
-    padding-top: 20px;
 }
-span.label {
-    margin: 5px 10px 15px 0px;
-    padding: 5px;
-    font-weight: normal;
-    letter-spacing: 2px;
-    background-color: #73D2DE;
+p.btn-container {
+    padding-top: 20px;
 }

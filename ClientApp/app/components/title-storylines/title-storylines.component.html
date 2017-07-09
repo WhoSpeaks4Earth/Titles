@@ -1,4 +1,9 @@
 
-<div *ngIf="title">
-    <p>{{ title.storyLine[0].description }}</p>
+<div class="panel panel-default" *ngFor="let storyline of storylines">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ storyline.type }}</h3>
+  </div>
+  <div class="panel-body">
+    {{ storyline.description }}
+  </div>
 </div>

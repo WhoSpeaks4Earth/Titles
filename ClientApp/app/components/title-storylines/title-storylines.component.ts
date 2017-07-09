@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ITitle } from '../../models/title.model';
+import { ngContentDef } from '@angular/core/src/view/ng_content';
+import { IStoryLine } from '../../models/storyline.model';
 
 @Component({
     selector: 'title-storylines',
@@ -7,5 +8,5 @@ import { ITitle } from '../../models/title.model';
     styleUrls: ['./title-storylines.component.css']
 })
 export class TitleStorylinesComponent {
-    @Input() title: ITitle;
+    @Input() storylines: IStoryLine[];
 }

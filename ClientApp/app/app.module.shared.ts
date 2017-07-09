@@ -5,8 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './components/app/app.component'
 import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
+import { TitleSummaryComponent } from './components/title-summary/title-summary.component';
 import { TitleDetailsComponent } from './components/title-details/title-details.component';
 import { TitleStorylinesComponent } from './components/title-storylines/title-storylines.component';
+import { TitleGenresComponent } from './components/title-genres/title-genres.component';
+import { LoaderComponent } from './components/loader/loader.component';
 import { FilterPipe } from './pipes/filter.pipe';
 
 export const sharedConfig: NgModule = {
@@ -16,7 +19,10 @@ export const sharedConfig: NgModule = {
         HomeComponent,
         ListComponent,
         TitleDetailsComponent,
+        TitleSummaryComponent,
         TitleStorylinesComponent,
+        LoaderComponent,
+        TitleGenresComponent,
         FilterPipe
     ],
     imports: [

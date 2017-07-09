@@ -1,0 +1,16 @@
+.well {
+    background-color: #FFF;
+    border-radius: 0px;
+    box-shadow: 2px 2px 3px #73D2DE;
+}
+.well:hover {
+    cursor: pointer;
+}
+h4 {
+    font-weight: normal;
+    color: #3A3E3B;
+    text-transform: uppercase;
+}
+p {
+    color: #D81159;
+}

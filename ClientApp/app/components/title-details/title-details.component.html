@@ -1,16 +1,15 @@
 <div class="row">
-    <div class="col-xs-6" *ngIf="title">
-        <h1>{{ title.titleName }} <small>{{ title.releaseYear }}</small></h1>
+    <div class="col-xs-6">
+        <h1 *ngIf="title">{{ title.titleName }} <small>{{ title.releaseYear }}</small></h1>
     </div>
     <div class="col-xs-6">
         <p class="btn-container"><a class="btn btn-primary btn-sm" href="#" role="button" [routerLink]="['/list']">Go Back</a></p>
     </div>
 </div>
 
-<div *ngIf="title">
-    <span class="label label-default" *ngFor="let g of title.titleGenres">
-        {{ g.genre.name }}
-    </span>
+<loader [item]="title"></loader>
 
-    <title-storylines [title]="title"></title-storylines>
+<div *ngIf="title">
+    <title-genres [genres]="title.titleGenres"></title-genres>
+    <title-storylines [storylines]="title.storyLine"></title-storylines>
 </div>
