@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './components/app/app.component'
 import { HomeComponent } from './components/home/home.component';
@@ -33,6 +34,7 @@ export const sharedConfig: NgModule = {
             { path: 'title-details/:id', component: TitleDetailsComponent },
             { path: '**', redirectTo: 'home' }
         ]),
+        NgbModule.forRoot(),
         FormsModule
     ]
 };

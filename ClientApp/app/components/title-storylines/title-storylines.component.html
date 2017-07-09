@@ -1,9 +1,9 @@
 
-<div class="panel panel-default" *ngFor="let storyline of storylines">
-  <div class="panel-heading">
-    <h3 class="panel-title">{{ storyline.type }}</h3>
-  </div>
-  <div class="panel-body">
-    {{ storyline.description }}
-  </div>
-</div>
+<h4>Synopses</h4>
+<ngb-accordion [closeOthers]="true" activeIds="0">
+  <ngb-panel [id]="i" [title]="storyline.type" *ngFor="let storyline of storylines; let i = index;">
+    <ng-template ngbPanelContent>
+      {{ storyline.description }}
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

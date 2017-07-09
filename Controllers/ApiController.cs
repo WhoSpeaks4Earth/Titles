@@ -42,7 +42,7 @@ namespace Titles.Controllers
                 .SingleOrDefaultAsync();
             
             // mimic a server delay
-            await Task.Delay(2000);
+            await Task.Delay(1000);
 
             if (details == null)
             {
